@@ -1,5 +1,3 @@
-use revolt_okapi::openapi3::RefOr;
-use revolt_rocket_okapi::revolt_okapi::openapi3;
 use rocket::{
     response::{self, Responder},
     Request, Response,
@@ -14,6 +12,12 @@ impl<'r> Responder<'r, 'static> for EmptyResponse {
             .ok()
     }
 }
+
+#[cfg(feature = "schema")]
+use revolt_okapi::openapi3::RefOr;
+
+#[cfg(feature = "schema")]
+use revolt_rocket_okapi::revolt_okapi::openapi3;
 
 #[cfg(feature = "schema")]
 impl revolt_rocket_okapi::response::OpenApiResponderInner for EmptyResponse {
