@@ -6,7 +6,6 @@ use rocket::{
 use rocket_okapi::okapi::openapi3;
 
 pub struct EmptyResponse;
-pub type NoContent = EmptyResponse;
 
 impl<'r> Responder<'r, 'static> for EmptyResponse {
     fn respond_to(self, _: &'r Request<'_>) -> response::Result<'static> {

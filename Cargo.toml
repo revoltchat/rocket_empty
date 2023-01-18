@@ -10,6 +10,6 @@ schema = ["rocket_okapi", "okapi"]
 default = ["schema"]
 
 [dependencies]
-rocket = { version = "0.5.0-rc.2", default-features = false, features = ["json"] }
-rocket_okapi = { git = "https://github.com/insertish/okapi", rev = "a1048d0c8cd771e424ec97d33d825c32e06aa120", features = [ "swagger" ], optional = true }
-okapi = { git = "https://github.com/insertish/okapi", rev = "a1048d0c8cd771e424ec97d33d825c32e06aa120", optional = true }
+rocket = { version = "0.5.0-rc.2", default-features = false }
+okapi = { version = "0.7.0-rc.1", optional = true, default-features = false }
+rocket_okapi = { version = "0.8.0-rc.2", optional = true, default-features = false }
