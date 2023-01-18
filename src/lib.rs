@@ -1,9 +1,9 @@
-use okapi::openapi3::RefOr;
+use revolt_okapi::openapi3::RefOr;
+use revolt_rocket_okapi::revolt_okapi::openapi3;
 use rocket::{
     response::{self, Responder},
     Request, Response,
 };
-use rocket_okapi::okapi::openapi3;
 
 pub struct EmptyResponse;
 
@@ -16,11 +16,11 @@ impl<'r> Responder<'r, 'static> for EmptyResponse {
 }
 
 #[cfg(feature = "schema")]
-impl rocket_okapi::response::OpenApiResponderInner for EmptyResponse {
+impl revolt_rocket_okapi::response::OpenApiResponderInner for EmptyResponse {
     fn responses(
-        _gen: &mut rocket_okapi::gen::OpenApiGenerator,
-    ) -> std::result::Result<openapi3::Responses, rocket_okapi::OpenApiError> {
-        let mut responses = okapi::Map::new();
+        _gen: &mut revolt_rocket_okapi::gen::OpenApiGenerator,
+    ) -> std::result::Result<openapi3::Responses, revolt_rocket_okapi::OpenApiError> {
+        let mut responses = revolt_okapi::Map::new();
 
         responses.insert(
             "204".to_string(),
